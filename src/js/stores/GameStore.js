@@ -44,6 +44,9 @@ function _restart() {
     //reset the cards
     _cards = [];
 
+    //reset the current score
+    _scores.currentScore = 0;
+
     //add two of each card type to the deck
     _cardTypes.forEach(function (cardType) {
         //calculate the two ids
