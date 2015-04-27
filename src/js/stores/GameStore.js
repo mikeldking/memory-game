@@ -140,7 +140,6 @@ AppDispatcher.register(function (action) {
                         //set the flipped cards to empty
                         _gameState.cardsBeingFlipped = [];
                         //check to see if the game is over
-                        debugger;
                         if (_gameState.numPairsMatched === _cardTypes.length) {
                             if (_scores.highScore < _scores.currentScore) {
                                 //capture the high score

@@ -8,6 +8,9 @@ function getStateFromStores() {
     }
 }
 
+/**
+ * The GameBoard that contains all the memory game cards
+ */
 var GameBoard = React.createClass({
     getInitialState: function () {
         return getStateFromStores();
@@ -21,7 +24,7 @@ var GameBoard = React.createClass({
     },
     render: function () {
         var cards = this.state.cards;
-        return (<div>
+        return (<div className='gameboard'>
             {cards.map(function (card) {
                 return <Card key={card.id} id={card.id} type={card.type} flipped={card.flipped}></Card>;
             })}

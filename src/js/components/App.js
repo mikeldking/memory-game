@@ -12,7 +12,6 @@ var App = React.createClass({
       return getStateFromStores();
     },
     restart: function(){
-        debugger;
       GameActions.restart();
     },
     componentDidMount: function () {

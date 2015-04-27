@@ -1,9 +1,43 @@
+//variables
+@card-border-radius-xsm: 3px;
+@card-width-xsm: 80px;
+@card-height-xsm: (3 * @card-width-xsm)/2;
+@card-border-xsm: (@card-width-xsm)/16;
+@card-margin-xsm: @card-border-xsm;
+@gameboard-width-xsm: (@card-width-xsm + 2 * @card-margin-xsm) * 4;
+
+@card-border-radius-sm: 5px;
+@card-width-sm: 100px;
+@card-height-sm: (3 * @card-width-sm)/2;
+@card-border-sm: (@card-width-sm)/16;
+@card-margin-sm: @card-border-sm;
+@gameboard-width-sm: (@card-width-sm + 2 * @card-margin-sm) * 4;
+
+@card-border-radius-md: 7px;
+@card-width-md: 150px;
+@card-height-md: (3 * @card-width-md)/2;
+@card-border-md: (@card-width-md)/16;
+@card-margin-md: @card-border-md;
+@gameboard-width-md: (@card-width-md + 2 * @card-margin-md) * 4;
+
+@card-border-radius-lg: 10px;
+@card-width-lg: 200px;
+@card-height-lg: (3 * @card-width-lg)/2;
+@card-border-lg: (@card-width-lg)/16;
+@card-margin-lg: @card-border-lg;
+@gameboard-width-lg: (@card-width-lg + 2 * @card-margin-lg) * 4;
+
+.gameboard{
+  width: @gameboard-width-xsm;
+  margin: auto;
+}
+
 .card{
   display: inline-block;
-  width: 200px;
-  height: 300px;
-  border-radius: 10px;
-  margin: 10px;
+  width: @card-width-xsm;
+  height: @card-height-xsm;
+  border-radius: @card-border-radius-xsm;
+  margin: @card-margin-xsm;
   font-size: .8em;
   -webkit-perspective: 600px;
   perspective: 600px;
@@ -18,8 +52,8 @@
   left: 0;
   width: inherit;
   height: inherit;
-  border-radius: 10px;
-  border: 10px solid #fff;
+  border-radius: @card-border-radius-xsm;
+  border: @card-border-xsm solid #fff;
   text-align: center;
   box-shadow: 0 1px 5px rgba(0,0,0,0.9);
   -webkit-transform-style: preserve-3d;
@@ -53,7 +87,7 @@
   transform-style: preserve-3d;
   backface-visibility: hidden;
   transition: all .4s ease-in-out;
-  border-radius: 10px;
+  border-radius: @card-border-radius-xsm;
   border: 10px solid #fff;
   box-shadow: 0 1px 5px rgba(0,0,0,0.9);
 }
@@ -76,4 +110,74 @@
 .card.flipped .back {
   z-index: 2;
   transform: rotateY(0deg);
+}
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+  .gameboard {
+    width: @gameboard-width-sm;
+  }
+
+  .card {
+    width: @card-width-sm;
+    height: @card-height-sm;
+    border-radius: @card-border-radius-sm;
+    margin: @card-margin-sm;
+  }
+
+  .card .front{
+    border-radius: @card-border-radius-sm;
+    border: @card-border-sm solid #fff;
+  }
+
+  .card .back{
+    border-radius: @card-border-radius-sm;
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) {
+  .gameboard {
+    width: @gameboard-width-md;
+  }
+
+  .card {
+    width: @card-width-md;
+    height: @card-height-md;
+    border-radius: @card-border-radius-md;
+    margin: @card-margin-md;
+  }
+
+  .card .front{
+    border-radius: @card-border-radius-md;
+    border: @card-border-md solid #fff;
+  }
+
+  .card .back{
+    border-radius: @card-border-radius-md;
+  }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) {
+  .gameboard {
+    width: @gameboard-width-lg;
+  }
+
+  .card {
+    width: @card-width-lg;
+    height: @card-height-lg;
+    border-radius: @card-border-radius-lg;
+    margin: @card-margin-lg;
+  }
+
+  .card .front{
+    border-radius: @card-border-radius-lg;
+    border: @card-border-lg solid #fff;
+  }
+
+  .card .back{
+    border-radius: @card-border-radius-lg;
+  }
 }
