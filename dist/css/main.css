@@ -6691,8 +6691,8 @@ button.close
 }
 .card .back
 {
-    font-size: 100px;
-    line-height: 300px;
+    font-size: 80px;
+    line-height: 120px;
 
     text-align: center;
 
@@ -6739,6 +6739,9 @@ button.close
     }
     .card .back
     {
+        font-size: 100px;
+        line-height: 150px;
+
         border-radius: 5px;
     }
 }
@@ -6764,6 +6767,9 @@ button.close
     }
     .card .back
     {
+        font-size: 150px;
+        line-height: 225px;
+
         border-radius: 7px;
     }
 }
@@ -6789,6 +6795,9 @@ button.close
     }
     .card .back
     {
+        font-size: 200px;
+        line-height: 300px;
+
         border-radius: 10px;
     }
 }

@@ -20615,12 +20615,13 @@ var Card = React.createClass({displayName: "Card",
         //set the card back icon via props so that the css does not give away the card
         var cardBackIconClass ={fa: true};
         cardBackIconClass['fa-' + this.props.type] = this.props.flipped;
-        return React.createElement("div", {onClick: this.handleClick, className: classnames(cardClassNames)}, 
+        return React.createElement("div", {onClick: (this.props.flipped) ? null : this.handleClick, className: classnames(cardClassNames)}, 
             React.createElement("div", {className: "front"}), 
             React.createElement("div", {className: "back"}, React.createElement("span", {className: classnames(cardBackIconClass)}))
         )
     },
     handleClick: function(){
+
         GameActions.flipCard(this.props.id);
     }
 });
