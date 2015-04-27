@@ -15,10 +15,10 @@ var CHANGE_EVENT = 'change',
         numPairsMatched: 0
     }, _cardTypes = [
         'plane',
-        'fire',
+        'heart',
         'camera',
         'pencil',
-        'knight'
+        'leaf'
     ];
 
 /**

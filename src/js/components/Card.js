@@ -10,8 +10,8 @@ var Card = React.createClass({
             card: true
         };
         //set the card back icon via props so that the css does not give away the card
-        var cardBackIconClass ={glyphicon: true};
-        cardBackIconClass['glyphicon-' + this.props.type] = this.props.flipped;
+        var cardBackIconClass ={fa: true};
+        cardBackIconClass['fa-' + this.props.type] = this.props.flipped;
         return <div onClick={this.handleClick} className={classnames(cardClassNames)}>
             <div className='front'></div>
             <div className='back'><span className={classnames(cardBackIconClass)}></span></div>
