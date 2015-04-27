@@ -20726,7 +20726,12 @@ var CHANGE_EVENT = 'change',
         'heart',
         'camera',
         'pencil',
-        'leaf'
+        'leaf',
+        'car',
+        'rocket',
+        'umbrella',
+        'trophy',
+        'star'
     ];
 
 /**
