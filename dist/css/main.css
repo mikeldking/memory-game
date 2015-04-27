@@ -6676,7 +6676,6 @@ button.close
     -webkit-transform: rotateY(-180deg);
             transform: rotateY(-180deg);
 
-    border: 10px solid #fff;
     border-radius: 3px;
     background: #fff;
     box-shadow: 0 1px 5px rgba(0, 0, 0, .9);
