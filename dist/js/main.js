@@ -20614,8 +20614,8 @@ var Card = React.createClass({displayName: "Card",
             card: true
         };
         //set the card back icon via props so that the css does not give away the card
-        var cardBackIconClass ={glyphicon: true};
-        cardBackIconClass['glyphicon-' + this.props.type] = this.props.flipped;
+        var cardBackIconClass ={fa: true};
+        cardBackIconClass['fa-' + this.props.type] = this.props.flipped;
         return React.createElement("div", {onClick: this.handleClick, className: classnames(cardClassNames)}, 
             React.createElement("div", {className: "front"}), 
             React.createElement("div", {className: "back"}, React.createElement("span", {className: classnames(cardBackIconClass)}))
@@ -20723,10 +20723,10 @@ var CHANGE_EVENT = 'change',
         numPairsMatched: 0
     }, _cardTypes = [
         'plane',
-        'fire',
+        'heart',
         'camera',
         'pencil',
-        'knight'
+        'leaf'
     ];
 
 /**
