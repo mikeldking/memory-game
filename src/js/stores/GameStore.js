@@ -8,7 +8,9 @@ var CHANGE_EVENT = 'change',
     _scores = {
         highScore: 0,
         currentScore: 0
-    }, _cards, _gameState = {
+    },
+    _cards,//store the cards to be displayed
+    _gameState = {
         //cards being currently flipped
         cardsBeingFlipped: [],
         //the number of pairs that have been matched
@@ -132,7 +134,6 @@ AppDispatcher.register(function (action) {
                         //set the flipped cards to empty
                         _gameState.cardsBeingFlipped = [];
                         //check to see if the game is over
-                        debugger;
                         if (_gameState.numPairsMatched === _cardTypes.length) {
                             if (_scores.highScore < _scores.currentScore) {
                                 //capture the high score

@@ -6,3 +6,10 @@ A simple memory game written with React and Flux
 $ cd memory-game
 $ npm install -g gulp           # Install Gulp task runner globally
 $ npm install                   # Install Node.js components listed in ./package.json
+```
+
+### How to Build
+
+```shell
+$ gulp default                    # Run the default gulp task
+```
