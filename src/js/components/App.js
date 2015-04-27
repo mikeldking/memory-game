@@ -30,7 +30,7 @@ var App = React.createClass({
                         <button type="button" className="btn btn-default disabled"><span className="glyphicon glyphicon-star" aria-hidden="true"></span> High Score <span className="badge">{this.state.highScore}</span></button>
                         <button type="button" className="btn btn-default disabled">Current Score <span className="badge">{this.state.currentScore}</span></button>
                     </div>
-                    <button type='button' onClick={this.restart} className="btn btn-primary pull-right">Restart</button>
+                    <button type='button' onClick={this.restart} className="btn btn-primary">Restart</button>
                 </div>
                 <GameBoard></GameBoard>
         </container>;
