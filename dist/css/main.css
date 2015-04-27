@@ -6328,6 +6328,94 @@ button.close
         bottom: 20px;
     }
 }
+.clearfix:before,
+.clearfix:after,
+.dl-horizontal dd:before,
+.dl-horizontal dd:after,
+.container:before,
+.container:after,
+.container-fluid:before,
+.container-fluid:after,
+.row:before,
+.row:after,
+.form-horizontal .form-group:before,
+.form-horizontal .form-group:after,
+.btn-toolbar:before,
+.btn-toolbar:after,
+.btn-group-vertical > .btn-group:before,
+.btn-group-vertical > .btn-group:after,
+.nav:before,
+.nav:after,
+.pager:before,
+.pager:after,
+.panel-body:before,
+.panel-body:after,
+.modal-footer:before,
+.modal-footer:after
+{
+    display: table;
+
+    content: ' ';
+}
+.clearfix:after,
+.dl-horizontal dd:after,
+.container:after,
+.container-fluid:after,
+.row:after,
+.form-horizontal .form-group:after,
+.btn-toolbar:after,
+.btn-group-vertical > .btn-group:after,
+.nav:after,
+.pager:after,
+.panel-body:after,
+.modal-footer:after
+{
+    clear: both;
+}
+.center-block
+{
+    display: block;
+
+    margin-right: auto;
+    margin-left: auto;
+}
+.pull-right
+{
+    float: right !important;
+}
+.pull-left
+{
+    float: left !important;
+}
+.hide
+{
+    display: none !important;
+}
+.show
+{
+    display: block !important;
+}
+.invisible
+{
+    visibility: hidden;
+}
+.text-hide
+{
+    font: 0/0 a;
+
+    color: transparent;
+    border: 0;
+    background-color: transparent;
+    text-shadow: none;
+}
+.hidden
+{
+    display: none !important;
+}
+.affix
+{
+    position: fixed;
+}
 @-ms-viewport
 {
     width: device-width;
@@ -6721,6 +6809,34 @@ button.close
 {
     .gameboard
     {
+        width: 405px;
+    }
+    .card
+    {
+        width: 90px;
+        height: 135px;
+        margin: 5.625px;
+
+        border-radius: 4px;
+    }
+    .card .front
+    {
+        border: 5.625px solid #fff;
+        border-radius: 4px;
+    }
+    .card .back
+    {
+        font-size: 60px;
+        line-height: 135px;
+
+        border-radius: 4px;
+    }
+}
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px)
+{
+    .gameboard
+    {
         width: 450px;
     }
     .card
@@ -6744,59 +6860,31 @@ button.close
         border-radius: 5px;
     }
 }
-/* Medium devices (desktops, 992px and up) */
-@media (min-width: 992px)
-{
-    .gameboard
-    {
-        width: 675px;
-    }
-    .card
-    {
-        width: 150px;
-        height: 225px;
-        margin: 9.375px;
-
-        border-radius: 7px;
-    }
-    .card .front
-    {
-        border: 9.375px solid #fff;
-        border-radius: 7px;
-    }
-    .card .back
-    {
-        font-size: 100px;
-        line-height: 225px;
-
-        border-radius: 7px;
-    }
-}
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px)
 {
     .gameboard
     {
-        width: 900px;
+        width: 540px;
     }
     .card
     {
-        width: 200px;
-        height: 300px;
-        margin: 12.5px;
+        width: 120px;
+        height: 180px;
+        margin: 7.5px;
 
-        border-radius: 10px;
+        border-radius: 7px;
     }
     .card .front
     {
-        border: 12.5px solid #fff;
-        border-radius: 10px;
+        border: 7.5px solid #fff;
+        border-radius: 7px;
     }
     .card .back
     {
-        font-size: 133.33333333px;
-        line-height: 300px;
+        font-size: 80px;
+        line-height: 180px;
 
-        border-radius: 10px;
+        border-radius: 7px;
     }
 }

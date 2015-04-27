@@ -20581,11 +20581,11 @@ var App = React.createClass({displayName: "App",
         return React.createElement("container", null, 
                 React.createElement("h1", null, "The Memory Game"), 
                 React.createElement("div", {className: "btn-toolbar", role: "toolbar"}, 
-                    React.createElement("div", {className: "btn-group", role: "group"}, 
+                    React.createElement("div", {className: "btn-group pull-left", role: "group"}, 
                         React.createElement("button", {type: "button", className: "btn btn-default disabled"}, React.createElement("span", {className: "glyphicon glyphicon-star", "aria-hidden": "true"}), " High Score ", React.createElement("span", {className: "badge"}, this.state.highScore)), 
                         React.createElement("button", {type: "button", className: "btn btn-default disabled"}, "Current Score ", React.createElement("span", {className: "badge"}, this.state.currentScore))
                     ), 
-                    React.createElement("button", {type: "button", onClick: this.restart, className: "btn btn-primary"}, "Restart")
+                    React.createElement("button", {type: "button", onClick: this.restart, className: "btn btn-primary pull-right"}, "Restart")
                 ), 
                 React.createElement(GameBoard, null)
         );
