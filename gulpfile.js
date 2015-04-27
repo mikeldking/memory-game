@@ -40,13 +40,8 @@ gulp.task('styles', function() {
         .pipe($.size({title: 'styles'}));
 });
 
-gulp.task('copy', function(){
-    gulp.src('src/index.html')
-        .pipe(gulp.dest('dist'));
-});
-
-gulp.task('default', ['browserify', 'styles', 'copy']);
+gulp.task('build', ['browserify', 'styles']);
 
 gulp.task('watch', function(){
-    gulp.watch('src/**/*.*', ['default']);
+    gulp.watch('src/**/*.*', ['build']);
 });
