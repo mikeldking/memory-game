@@ -20586,7 +20586,7 @@ var App = React.createClass({displayName: "App",
                         React.createElement("button", {type: "button", className: "btn btn-default disabled"}, React.createElement("span", {className: "glyphicon glyphicon-star", "aria-hidden": "true"}), " High Score ", React.createElement("span", {className: "badge"}, this.state.highScore)), 
                         React.createElement("button", {type: "button", className: "btn btn-default disabled"}, "Current Score ", React.createElement("span", {className: "badge"}, this.state.currentScore))
                     ), 
-                    React.createElement("button", {type: "button", onClick: this.restart, className: "btn btn-primary pull-right"}, "Restart")
+                    React.createElement("button", {type: "button", onClick: this.restart, className: "btn btn-primary"}, "Restart")
                 ), 
                 React.createElement(GameBoard, null)
         );
@@ -20751,6 +20751,9 @@ function _restart() {
 
     //reset the cards
     _cards = [];
+
+    //reset the current score
+    _scores.currentScore = 0;
 
     //add two of each card type to the deck
     _cardTypes.forEach(function (cardType) {
