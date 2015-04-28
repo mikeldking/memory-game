@@ -27,7 +27,7 @@ var CHANGE_EVENT = 'change',
     ];
 
 /**
- * shuffles the cards
+ * shuffles the cards using knuth shuffle
  * @private
  */
 function _shuffleCards() {
@@ -46,12 +46,11 @@ function _restart() {
     _gameState.numPairsMatched = 0;
     _gameState.cardsBeingFlipped = [];
 
-    //reset the cards
-    _cards = [];
-
     //reset the current score
     _scores.currentScore = 0;
 
+    //reset the cards
+    _cards = [];
     //add two of each card type to the deck
     _cardTypes.forEach(function (cardType) {
         //calculate the two ids
@@ -68,16 +67,28 @@ function _restart() {
     _shuffleCards();
 }
 
-function _resetcardsBeingFlipped() {
+/**
+ * Resets the cards being flipped.
+ * @private
+ */
+function _resetCardsBeingFlipped() {
     _cards[_gameState.cardsBeingFlipped[0]].flipped = false;
     _cards[_gameState.cardsBeingFlipped[1]].flipped = false;
     _gameState.cardsBeingFlipped = [];
-};
+}
 
+/**
+ * Subtracts a point from the current points. Does not subtract a point if the score is at 0
+ * @private
+ */
 function _subtractCurrentPoints() {
     _scores.currentScore = (_scores.currentScore === 0) ? 0 : _scores.currentScore - 1;
 }
 
+/**
+ * Adds 1 point to the current score
+ * @private
+ */
 function _addCurrentPoints() {
     _scores.currentScore += 1;
 }
@@ -88,17 +99,24 @@ _restart();
 
 var GameStore = assign({}, EventEmitter.prototype, {
     /**
-     * Get the high score
-     * @return {object}
+     * Get the high score. Accessor method for the scors
+     * @return {object} score object with the high score and current score
      */
     getScores: function () {
         return _scores;
     },
 
+    /**
+     * Get
+     * @returns {array} cards an array of card objects
+     */
     getCards: function () {
         return _cards;
     },
 
+    /**
+     * Emits the change event to let listeners know that the store changed
+     */
     emitChange: function () {
         this.emit(CHANGE_EVENT);
     },
@@ -127,19 +145,29 @@ AppDispatcher.register(function (action) {
             GameStore.emitChange();
             break;
         case GameConstants.FLIP_CARD:
+            // do not handle the flip card action if more than 2 cards are flipped
             if (_gameState.cardsBeingFlipped.length < 2) {
+
+                // set the card as flipped
                 _cards[action.id].flipped = true;
+                // store the card being flipped in the state
                 _gameState.cardsBeingFlipped.push(action.id);
+
+                //if 2 cards are flipped, check equality
                 if (_gameState.cardsBeingFlipped.length === 2) {
-                    if (_cards[_gameState.cardsBeingFlipped[0]].type ===
-                        _cards[_gameState.cardsBeingFlipped[1]].type) {
-                        //increase the
+
+                    // check to see if the card types are the same. If they are, add to the points of the current game
+                    if (_cards[_gameState.cardsBeingFlipped[0]].type === _cards[_gameState.cardsBeingFlipped[1]].type) {
+
+                        // keep track of how many pairs have been matched
                         _gameState.numPairsMatched += 1;
-                        //the cards are the same. Give the points
+                        // the cards are the same. Give the points
                         _addCurrentPoints();
-                        //set the flipped cards to empty
+                        // set the flipped cards to empty
                         _gameState.cardsBeingFlipped = [];
-                        //check to see if the game is over
+
+                        // check to see if the game is over by compairing the number of matched pairs with the number of
+                        // card types
                         if (_gameState.numPairsMatched === _cardTypes.length) {
                             if (_scores.highScore < _scores.currentScore) {
                                 //capture the high score
@@ -147,9 +175,10 @@ AppDispatcher.register(function (action) {
                             }
                         }
                     } else {
-                        //set the cards back and subtract points
-                        setTimeout(function resetcardsBeingFlipped() {
-                            _resetcardsBeingFlipped();
+                        // the cards do not match
+                        // set the cards back and subtract points
+                        setTimeout(function resetCardsBeingFlipped() {
+                            _resetCardsBeingFlipped();
                             _subtractCurrentPoints();
                             GameStore.emitChange();
                         }, 1000);
