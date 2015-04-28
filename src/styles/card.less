@@ -1,35 +1,35 @@
 //variables
 @card-border-radius-xsm: 3px;
 @card-width-xsm: 80px;
-@card-height-xsm: (3 * @card-width-xsm)/2;
-@card-fonticon-size-xsm: (2 * @card-width-xsm)/3;
-@card-border-xsm: (@card-width-xsm)/16;
+@card-height-xsm: floor((3 * @card-width-xsm)/2);
+@card-fonticon-size-xsm: floor((2 * @card-width-xsm)/3);
+@card-border-xsm: floor((@card-width-xsm)/16);
 @card-margin-xsm: @card-border-xsm;
-@gameboard-width-xsm: (@card-width-xsm + 2 * @card-margin-xsm) * 4;
+@gameboard-width-xsm: floor((@card-width-xsm + 2 * @card-margin-xsm) * 4);
 
 @card-border-radius-sm: 4px;
 @card-width-sm: 90px;
-@card-height-sm: (3 * @card-width-sm)/2;
-@card-fonticon-size-sm: (2 * @card-width-sm)/3;
-@card-border-sm: (@card-width-sm)/16;
+@card-height-sm: floor((3 * @card-width-sm)/2);
+@card-fonticon-size-sm: floor((2 * @card-width-sm)/3);
+@card-border-sm: floor((@card-width-sm)/16);
 @card-margin-sm: @card-border-sm;
-@gameboard-width-sm: (@card-width-sm + 2 * @card-margin-sm) * 4;
+@gameboard-width-sm: floor((@card-width-sm + 2 * @card-margin-sm) * 4);
 
 @card-border-radius-md: 5px;
 @card-width-md: 100px;
-@card-height-md: (3 * @card-width-md)/2;
-@card-fonticon-size-md: (2 * @card-width-md)/3;
-@card-border-md: (@card-width-md)/16;
+@card-height-md: floor((3 * @card-width-md)/2);
+@card-fonticon-size-md: floor((2 * @card-width-md)/3);
+@card-border-md: floor((@card-width-md)/16);
 @card-margin-md: @card-border-md;
-@gameboard-width-md: (@card-width-md + 2 * @card-margin-md) * 4;
+@gameboard-width-md: floor((@card-width-md + 2 * @card-margin-md) * 4);
 
 @card-border-radius-lg: 7px;
 @card-width-lg: 120px;
-@card-height-lg: (3 * @card-width-lg)/2;
-@card-fonticon-size-lg: (2 * @card-width-lg)/3;
-@card-border-lg: (@card-width-lg)/16;
-@card-margin-lg: @card-border-lg;
-@gameboard-width-lg: (@card-width-lg + 2 * @card-margin-lg) * 4;
+@card-height-lg: floor((3 * @card-width-lg)/2);
+@card-fonticon-size-lg: floor((2 * @card-width-lg)/3);
+@card-border-lg: floor((@card-width-lg)/16);
+@card-margin-lg: floor(@card-border-lg);
+@gameboard-width-lg: floor((@card-width-lg + 2 * @card-margin-lg) * 4);
 
 .gameboard{
   width: @gameboard-width-xsm;
