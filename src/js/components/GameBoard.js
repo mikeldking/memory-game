@@ -2,6 +2,10 @@ var React = require('react'),
     Card = require('./Card'),
     GameStore = require('../stores/GameStore');
 
+/**
+ * A utility function that grabs the cards from the store
+ * @returns {{cards: (*|array)}} an array of cards
+ */
 function getStateFromStores() {
     return {
         cards: GameStore.getCards()

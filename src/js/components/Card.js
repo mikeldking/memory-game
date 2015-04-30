@@ -1,8 +1,13 @@
 var React = require('react'),
+    PureRenderMixin = require('react/addons').addons.PureRenderMixin,
     classnames = require('classnames'),
     GameActions = require('../actions/GameActions');
 
+/**
+ * The card component
+ */
 var Card = React.createClass({
+    mixins: [PureRenderMixin],
     render: function(){
         //construct a class names object to pass to class names
         var cardClassNames = {
@@ -18,7 +23,6 @@ var Card = React.createClass({
         </div>
     },
     handleClick: function(){
-
         GameActions.flipCard(this.props.id);
     }
 });

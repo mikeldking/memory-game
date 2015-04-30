@@ -3,9 +3,13 @@ var React = require('react'),
     GameStore = require('../stores/GameStore'),
     GameActions = require('../actions/GameActions');
 
+/**
+ * A utility function that grabs the necessary state from the store
+ * @returns {*|Object} the scores object
+ */
 function getStateFromStores() {
     return GameStore.getScores();
-};
+}
 
 var App = React.createClass({
     getInitialState: function(){
